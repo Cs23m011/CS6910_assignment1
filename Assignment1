@@ -1,0 +1,18 @@
+from keras.datasets import fashion_mnist
+import numpy as np
+import matplotlib.pyplot as plt
+import copy
+from tqdm import tqdm
+wandb.init(project='Assignment 1')
+(train_image, train_class),(test_image, test_class) = fashion_mnist.load_data() #loaded the data
+label_class=['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle boot'] #labels of the dataset
+images=[]
+
+for i in range(10):
+  for j in range(train_image.shape[0]):
+    if(train_class[j]==i):
+      images.append(train_image[j])
+      break
+  plt.subplot(2,5,i+1)
+  plt.imshow(images[i],cmap='gist_gray',vmin=0,vmax=255)
+  wandb.log({"one sample image from each class displayed":[wandb.Image(images[i],caption=label_class[i])]})   #logged in Wandb
