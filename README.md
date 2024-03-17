@@ -5,7 +5,7 @@ pip install requirement.txt
 
 python train.py
 ```
-My code is very much flexible to add in command line arguments . I am adding the list of possible argument below for your reference.
+My code is very much flexible to add in command line arguments . I am adding the list of possible argument below for your reference.Please try to run this on local PC or from command promt by ensuring all the libraries in requirements.txt are already installed in your system. Because in google colab this might give problem .
 
 | Name        | Default Value   | Description |
 | ------------- |:-------------:| -----:|
